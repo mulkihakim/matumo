@@ -9,13 +9,13 @@ class TaskRepository (
 
 ) {
 
-    suspend fun insetTask(
+    suspend fun insertTask(
         task: TaskEntity
     ) {
-        taskDao.inserTask(task)
+        taskDao.insertTask(task)
     }
 
-    fun getAllTasks() = taskDao.getALllTasks()
+    fun getAllTasks() = taskDao.getAllTasks()
 
     suspend fun updateTask(
         task: TaskEntity

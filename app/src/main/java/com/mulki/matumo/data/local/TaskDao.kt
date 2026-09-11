@@ -7,12 +7,12 @@ import kotlinx.coroutines.flow.Flow
 interface TaskDao {
 
     @Insert
-    suspend fun inserTask(
+    suspend fun insertTask(
         task: TaskEntity
     )
 
     @Query("SELECT * FROM tasks ORDER BY id DESC")
-    fun getALllTasks(): Flow<List<TaskEntity>>
+    fun getAllTasks(): Flow<List<TaskEntity>>
 
     @Update
     suspend fun updateTask(

@@ -19,7 +19,7 @@ class TaskViewModel(
         task: TaskEntity
     ) {
         viewModelScope.launch {
-            repository.insetTask(task)
+            repository.insertTask(task)
         }
     }
 
