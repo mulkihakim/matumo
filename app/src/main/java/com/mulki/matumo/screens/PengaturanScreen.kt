@@ -3,7 +3,7 @@ package com.mulki.matumo.screens
 
 import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -14,15 +14,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.mulki.matumo.ui.theme.*
-import com.mulki.matumo.R
 import com.mulki.matumo.data.local.PreferenceManager
 
 
@@ -232,16 +229,19 @@ fun PengaturanScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
 
-                    Image(
-                        painter = painterResource(
-                            id = R.drawable.mulki
-                        ),
-                        contentDescription = "Foto Developer",
+                    Box(
                         modifier = Modifier
                             .size(64.dp)
-                            .clip(CircleShape),
-                        contentScale = ContentScale.Crop
-                    )
+                            .clip(CircleShape)
+                            .background(AbuBorder),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = "FOTO",
+                            color = AbuTextGelap,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
 
                     Spacer(modifier = Modifier.width(16.dp))
 
